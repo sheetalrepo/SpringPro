@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--
+	#without using autowiring we can inject another class using ref  
+    <bean id="dev" class="com.B_Developer">
+     	<property name="computer" ref="desktop"></property>
+	</bean>
+	<bean id="desktop" class="com.B_Desktop"></bean>
+-->
+
+
+<!--  
+	#autowire will happen based on Name i.e. ref = "id name" | same as above
+    <bean id="dev" class="com.B_Developer" autowire="byName">
+     	<property name="computer" ref="desktop"></property>
+	</bean>
+
+	<bean id="laptop" class="com.B_Laptop"></bean>
+	<bean id="desktop" class="com.B_Desktop"></bean>
+-->	
+	
+	
+	
+<!-- By Type look for any class which implements Computer -->	
+  
+	<bean id="dev" class="com.B_Developer" autowire="byType">
+	</bean>
+	<bean id="laptop" class="com.B_Laptop"></bean>
+	<bean id="desktop" class="com.B_Desktop" primary="true"></bean>
+	
+	
+</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--  
+	<bean id="appleBean" class="com.A_Apple"></bean>      //Singleton by default
+	<bean id="appleBean2" class="com.A_Apple"></bean>     //Another object of same class
+	<bean id="appleBean" class="com.A_Apple" scope="prototype"></bean>    //Not singleton
+	
+
+	#Passing primitive values from xml 
+	<bean id="appleBean" class="com.A_Apple">
+		<property name="price" value="50"></property>
+	</bean>
+-->
+
+
+    <bean id="appleBean" class="com.A_Apple">
+		<property name="price" value="50"></property>
+     	<property name="market" ref="mkt"></property>
+     	<constructor-arg value="100"></constructor-arg>
+	</bean>
+
+	<bean id="mkt" class="com.A_Market"></bean>
+
+	
+</beans>
